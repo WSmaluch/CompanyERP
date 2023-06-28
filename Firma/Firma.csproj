@@ -1,0 +1,368 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+	<TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Models\ModelFaktury.edmx" />
+    <None Remove="Views\24dp.png" />
+    <None Remove="Views\Content\Icons\account-plus.png" />
+    <None Remove="Views\Content\Icons\account.png" />
+    <None Remove="Views\Content\Icons\add.png" />
+    <None Remove="Views\Content\Icons\add_circle.png" />
+    <None Remove="Views\Content\Icons\Adres.png" />
+    <None Remove="Views\Content\Icons\Adresy.png" />
+    <None Remove="Views\Content\Icons\archive.png" />
+    <None Remove="Views\Content\Icons\arrow-u-left-top.png" />
+    <None Remove="Views\Content\Icons\arrow-u-right-top.png" />
+    <None Remove="Views\Content\Icons\cancel.png" />
+    <None Remove="Views\Content\Icons\cog.png" />
+    <None Remove="Views\Content\Icons\contact_mail.png" />
+    <None Remove="Views\Content\Icons\contact_phone.png" />
+    <None Remove="Views\Content\Icons\content-copy.png" />
+    <None Remove="Views\Content\Icons\content-cut.png" />
+    <None Remove="Views\Content\Icons\content-paste.png" />
+    <None Remove="Views\Content\Icons\content-save.png" />
+    <None Remove="Views\Content\Icons\dodajp.png" />
+    <None Remove="Views\Content\Icons\dodajPracownika.png" />
+    <None Remove="Views\Content\Icons\dokument.png" />
+    <None Remove="Views\Content\Icons\dokumenty.png" />
+    <None Remove="Views\Content\Icons\drive.png" />
+    <None Remove="Views\Content\Icons\drive2.png" />
+    <None Remove="Views\Content\Icons\dwa.png" />
+    <None Remove="Views\Content\Icons\engineering_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Remove="Views\Content\Icons\file-document-outline.png" />
+    <None Remove="Views\Content\Icons\file-document-plus-outline.png" />
+    <None Remove="Views\Content\Icons\folder.png" />
+    <None Remove="Views\Content\Icons\help-circle.png" />
+    <None Remove="Views\Content\Icons\info.png" />
+    <None Remove="Views\Content\Icons\katdok.png" />
+    <None Remove="Views\Content\Icons\katdokdodaj.png" />
+    <None Remove="Views\Content\Icons\katkontra.png" />
+    <None Remove="Views\Content\Icons\kontakt.png" />
+    <None Remove="Views\Content\Icons\kontakty.png" />
+    <None Remove="Views\Content\Icons\kontrahenci.png" />
+    <None Remove="Views\Content\Icons\kontrahent.png" />
+    <None Remove="Views\Content\Icons\kontrahentkategoria.png" />
+    <None Remove="Views\Content\Icons\kontrahentkategorie.png" />
+    <None Remove="Views\Content\Icons\kraje.png" />
+    <None Remove="Views\Content\Icons\magazyn.png" />
+    <None Remove="Views\Content\Icons\magazyny.png" />
+    <None Remove="Views\Content\Icons\manage_accounts_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Remove="Views\Content\Icons\miary.png" />
+    <None Remove="Views\Content\Icons\najpopularniejszy.png" />
+    <None Remove="Views\Content\Icons\odswiezp.png" />
+    <None Remove="Views\Content\Icons\package-variant-closed-plus.png" />
+    <None Remove="Views\Content\Icons\package-variant-closed-white.png" />
+    <None Remove="Views\Content\Icons\package-variant-closed.png" />
+    <None Remove="Views\Content\Icons\payments.png" />
+    <None Remove="Views\Content\Icons\person_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Remove="Views\Content\Icons\play.png" />
+    <None Remove="Views\Content\Icons\plus.png" />
+    <None Remove="Views\Content\Icons\pozycjafak.png" />
+    <None Remove="Views\Content\Icons\pozycjefak.png" />
+    <None Remove="Views\Content\Icons\pracownicy.png" />
+    <None Remove="Views\Content\Icons\price_check.png" />
+    <None Remove="Views\Content\Icons\przyjecieTowaru.png" />
+    <None Remove="Views\Content\Icons\PZ.png" />
+    <None Remove="Views\Content\Icons\raports.png" />
+    <None Remove="Views\Content\Icons\save.png" />
+    <None Remove="Views\Content\Icons\saveAs.png" />
+    <None Remove="Views\Content\Icons\saveclose.png" />
+    <None Remove="Views\Content\Icons\serwis.png" />
+    <None Remove="Views\Content\Icons\serwisy.png" />
+    <None Remove="Views\Content\Icons\towar.png" />
+    <None Remove="Views\Content\Icons\towary.png" />
+    <None Remove="Views\Content\Icons\tree.png" />
+    <None Remove="Views\Content\Icons\trzy.png" />
+    <None Remove="Views\Content\Icons\typkontrahenta.png" />
+    <None Remove="Views\Content\Icons\urzadzenia.png" />
+    <None Remove="Views\Content\Icons\urzadzenie.png" />
+    <None Remove="Views\Content\Icons\usunp.png" />
+    <None Remove="Views\Content\Icons\vat.png" />
+    <None Remove="Views\Content\Icons\vatt.png" />
+    <None Remove="Views\Content\Icons\WydanieTowaru.png" />
+    <None Remove="Views\Content\Icons\WZ.png" />
+    <None Remove="Views\Content\Icons\WZzz.png" />
+    <None Remove="Views\dwa.png" />
+    <None Remove="Views\Jeden.png" />
+    <None Remove="Views\trzy.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EntityDeploy Include="Models\Entities\ModelFaktury.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelFaktury.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Content\Icons\add_circle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\Adres.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\Adresy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\cancel.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\dodajp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\dodajPracownika.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\dokument.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\dokumenty.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\folder.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\info.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Content\Icons\add.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\drive.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\drive2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\engineering_FILL0_wght400_GRAD0_opsz48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\katdok.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\katdokdodaj.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\katkontra.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\kontakt.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\kontakty.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\kontrahenci.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\kontrahent.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\kontrahentkategoria.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\kontrahentkategorie.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\kraje.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\magazyn.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\magazyny.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\manage_accounts_FILL0_wght400_GRAD0_opsz48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Content\Icons\archive.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\contact_mail.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="5.0.0" />
+    <PackageReference Include="MvvmLight" Version="5.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Security" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Content\Icons\account-plus.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\account.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\arrow-u-left-top.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\arrow-u-right-top.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\cog.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\contact_phone.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\content-copy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\content-cut.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\content-paste.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\content-save.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\dwa.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\file-document-outline.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\file-document-plus-outline.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\help-circle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\Jeden.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\miary.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\najpopularniejszy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\odswiezp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\package-variant-closed-plus.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\package-variant-closed-white.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\package-variant-closed.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\payments.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\person_FILL0_wght400_GRAD0_opsz48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\play.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\plus.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\pozycjafak.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\pozycjefak.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\pracownicy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\price_check.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\przyjecieTowaru.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\PZ.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\raports.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\save.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\saveAs.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\saveclose.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\serwis.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\serwisy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\towar.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\towary.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\tree.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\trzy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\typkontrahenta.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\urzadzenia.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\urzadzenie.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\usunp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\vat.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\vatt.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\WydanieTowaru.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Content\Icons\WZzz.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\dwa.png" />
+    <Resource Include="Views\Jeden.png" />
+    <Resource Include="Views\trzy.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Models\Entities\ModelFaktury.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ModelFaktury.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

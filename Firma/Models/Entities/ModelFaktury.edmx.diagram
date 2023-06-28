@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9b2a339ff97d4476900213dab607d9a0" Name="Diagram1" ZoomLevel="60">
+        <EntityTypeShape EntityType="Projekt2Model.Adres" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.Dokument" Width="1.5" PointX="10.5" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.JednostkaMiary" Width="1.5" PointX="11.25" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.KategoriaDokumentu" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.KategoriaKontrahenta" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.KategorieSerwisu" Width="1.5" PointX="11.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.Kontakt" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.KontrahenciKontakt" Width="1.5" PointX="7.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.Kontrahent" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.Kraj" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.Magazyn" Width="1.5" PointX="11.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.PozycjaFaktury" Width="1.5" PointX="15.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.PozycjaPrzyjeciaZewnętrznegoTowaru" Width="1.5" PointX="15.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.PozycjaWydaniaZewnetrznegoTowaru" Width="1.5" PointX="18.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.Pracownik" Width="1.5" PointX="8.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.PrzyjecieZewnetrzne" Width="1.5" PointX="7.5" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.RodzajKontrahenta" Width="1.5" PointX="3" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.RodzajVAT" Width="1.5" PointX="11.25" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.Serwisanci" Width="1.5" PointX="11.25" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.SposobPlatnosci" Width="1.5" PointX="8.25" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.Towar" Width="1.5" PointX="13.5" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.TypDokumentu" Width="1.5" PointX="8.25" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.TypKontrahenta" Width="1.5" PointX="3" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.TypTowaru" Width="1.5" PointX="11.25" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.Urzadzenie" Width="1.5" PointX="11.25" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.WydanieZewnetrzne" Width="1.5" PointX="13.5" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.ZlecenieSerwisowe" Width="1.5" PointX="13.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt2Model.ZmianaCeny" Width="1.5" PointX="15.75" PointY="29.875" IsExpanded="true" />
+        <AssociationConnector Association="Projekt2Model.FK_Adres_Kraj" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Kontrahent_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Kontrahent_Adres1" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Pracownik_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Dokument_KategoriaDokumentu" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Dokument_Kontrahent" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Dokument_Magazyn" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Dokument_SposobPlatnosci" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Dokument_TypDokumentu" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PozycjaFaktury_Dokument" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PozycjaPrzyjeciaZewnętrznegoTowaru_JednostkaMiary" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PozycjaWydaniaZewnetrznegoTowaru_JednostkaMiary" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Towar_JednostkaMiary" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_ZmianaCeny_JednostkaMiary" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Kontrahent_KategoriaKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Serwisanci_KategorieSerwisu" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Urzadzenie_KategorieSerwisu" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_ZlecenieSerwisowe_KategorieSerwisu" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_KontrahenciKontakt_Kontakt" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Pracownik_Kontakt" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_KontrahenciKontakt_Kontrahent" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Kontrahent_RodzajKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Kontrahent_TypKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PrzyjecieWewnetrzne_Kontrahent" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PrzyjecieZewnetrznego_Kontrahent" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_ZlecenieSerwisowe_Kontrahent" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PrzyjecieWewnetrzne_Magazyn" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PrzyjecieZewnetrznego_Magazyn" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_ZlecenieSerwisowe_Magazyn" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PozycjaFaktury_Towar" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PozycjaPrzyjeciaZewnętrznegoTowaru_Towar" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_PozycjaWydaniaZewnetrznegoTowaru_Towar" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Towar_RodzajVAT" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Towar_RodzajVAT1" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Towar_RodzajVAT2" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_ZlecenieSerwisowe_Serwisanci" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Towar_TypTowaru" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_ZmianaCeny_Towar" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_ZlecenieSerwisowe_Urzadzenie" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_ZlecenieSerwisowe_ZlecenieSerwisowe" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt2Model.FK_Kontrahent_Kontakt" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

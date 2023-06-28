@@ -1,0 +1,162 @@
+﻿<local:JedenViewBase x:Class="Firma.Views.ZlecenieSerwisoweView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="White">
+    <UserControl.Resources>
+        <ResourceDictionary Source="StyleZakladekResources.xaml"/>
+    </UserControl.Resources>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Expander Header="Kontrahent" IsExpanded="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="230"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Content="Nazwa kontrahenta" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=KontrahentNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Grid.Row="0" Grid.Column="2" Content="..." Margin="8" Command="{Binding ShowKontrahenciCommand}"/>
+                    <Label Grid.Row="1" Content="NIP kontrahenta" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=KontrahentNIP, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="2" Content="Adres kontrahenta" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=KontrahentAdres, UpdateSourceTrigger=PropertyChanged}"/>
+
+                </Grid>
+            </Expander>
+            <Expander Grid.Row="2" Header="Odbiorca">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="230"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Content="Nazwa kontrahenta" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=KontrahentNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Grid.Row="0" Grid.Column="2" Content="..." Margin="8" Command="{Binding ShowKontrahenciCommand}"/>
+                    <Label Grid.Row="1" Content="NIP kontrahenta" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=KontrahentNIP, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="2" Content="Adres kontrahenta" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=KontrahentAdres, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </Expander>
+            <Expander Grid.Row="3" Header="Kategoria, Urządzenie, Magazyn" IsExpanded="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Kategoria" Style="{StaticResource LabelStandardowy}"/>
+                    <ComboBox Grid.Column="1" Style="{StaticResource ComboBoxStandardowy}"
+                      ItemsSource="{Binding KategorieSerwisuComboBoxItems}" 
+                      DisplayMemberPath="Value" 
+                      SelectedValuePath="Key" 
+                      SelectedValue="{Binding Path=IdKategoriiSerwisu, Mode=TwoWay}"/>
+
+
+                    <Label Grid.Row="1" Content="Urządzenie:" Style="{StaticResource LabelStandardowy}"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource ComboBoxStandardowy}"
+                      ItemsSource="{Binding UrzadzeniaComboBoxItems}" 
+                      DisplayMemberPath="Value" 
+                      SelectedValuePath="Key" 
+                      SelectedValue="{Binding Path=IdUrzadzenia, Mode=TwoWay}"/>
+
+                    <Label Grid.Row="2" Content="Magazyn:" Style="{StaticResource LabelStandardowy}"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource ComboBoxStandardowy}"
+                      ItemsSource="{Binding MagazynyComboBoxItems}" 
+                      DisplayMemberPath="Value" 
+                      SelectedValuePath="Key" 
+                      SelectedValue="{Binding Path=IdMagazynu, Mode=TwoWay}"/>
+
+                    <Label Grid.Row="0" Grid.Column="3" Content="Prowadzący:" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="0" Grid.Column="4" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=SerwisantImieNazwisko, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Grid.Row="0" Grid.Column="5" Content="..." Margin="8" Command="{Binding ShowSerwisanciCommand}"/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=SerwisantNazwaFirmy, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="2" Grid.Column="3" Content="Priorytet" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="2" Grid.Column="4" Style="{StaticResource TextBoxStandardowy}" Text="{Binding Path=Priorytet, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </Expander>
+            <Expander Grid.Row="4" Header="Daty i czas realizacji" IsExpanded="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="148.807"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Data przyjęcia:"/>
+                    <DatePicker Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource DatePickerStandardowy}" Text="{Binding Path=DataPrzyjecia, UpdateSourceTrigger=PropertyChanged}" />
+
+                    <Label Grid.Row="1" Content="Data realizacji:"/>
+                    <DatePicker Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="2"  Style="{StaticResource DatePickerStandardowy}" Text="{Binding Path=DataRealizacji, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <Label Grid.Column="4" Content="Planowany czas realizacji:"  Style="{StaticResource LabelStandardowy}"/>
+                    <DatePicker Grid.Column="5" Style="{StaticResource DatePickerStandardowy}" Text="{Binding Path=PlanowanyCzas, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <Label Grid.Row="1" Grid.Column="4" Content="Rzeczywisty czas realizacji:"  Style="{StaticResource LabelStandardowy}"/>
+                    <DatePicker Grid.Row="1" Grid.Column="5" Style="{StaticResource DatePickerStandardowy}" Text="{Binding Path=RzeczywistyCzas, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </Expander>
+            <Expander Grid.Row="5" Header="Opis i status zlecenia">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label  Content="Opis:" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource BigTextBox}" Text="{Binding Path=Opis, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="2" Content="Status:" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox  Grid.Row="2" Grid.Column="1" Style="{StaticResource ControlStandardowy}" Text="{Binding Path=Status, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </Expander>
+            
+        </Grid>
+    </ScrollViewer>
+</local:JedenViewBase>

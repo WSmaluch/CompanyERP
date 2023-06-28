@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Firma.Views.KontrahenciKontaktView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#D3D3D3">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kontrahent" Binding="{Binding Path=Nazwa}"/>
+                <DataGridTextColumn Header="NIP" Binding="{Binding Path=NIP}"/>
+                <DataGridTextColumn Header="Miejscowosc(KRS)" Binding="{Binding Path=AdresZKRSMiejscowosc}"/>
+                <DataGridTextColumn Header="Nazwa dzialu" Binding="{Binding Path=KontaktNazwaDzialu}"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Path=KontaktTelefon1}"/>
+                <DataGridTextColumn Header="Telefon alternatwny" Binding="{Binding Path=KontaktTelefon2}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Path=KontaktEmail1}"/>
+                <DataGridTextColumn Header="Email alternatwny" Binding="{Binding Path=KontaktEmail2}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

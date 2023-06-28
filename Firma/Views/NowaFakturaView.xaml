@@ -1,0 +1,87 @@
+﻿<local:JedenViewBase x:Class="Firma.Views.NowaFakturaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="StyleZakladekResources.xaml"/>
+    </UserControl.Resources>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid Background="white">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <!--<Label Grid.Row="0" Style="{StaticResource LabelStandardowy}">Tu będzie dodawanie towarów</Label>
+        <Label Grid.Row="1" Style="{StaticResource LabelError}">Tu będzie dodawanie towarów</Label>
+        <Button Grid.Row="2" Content="Ok" Style="{StaticResource ButtonStandardowy}"/>-->
+            <Expander Grid.Row="0" Header="Ogólne" Margin="5" IsExpanded="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Typ dokumentu" Style="{StaticResource LabelStandardowy}"/>
+                    <ComboBox Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource ControlStandardowy}"
+                         ItemsSource="{Binding TypyDokumentuComboBoxItems}" 
+                         DisplayMemberPath="Value" 
+                         SelectedValuePath="Key" 
+                         SelectedValue="{Binding Path=IdTypuDokumentu, Mode=TwoWay}"/>
+                    <Label Grid.Row="1" Content="Kategoria dokumentu" Style="{StaticResource LabelStandardowy}"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource ControlStandardowy}"
+                         ItemsSource="{Binding KategorieDokumentuComboBoxItems}" 
+                         DisplayMemberPath="Value" 
+                         SelectedValuePath="Key" 
+                         SelectedValue="{Binding Path=IdKategoriiDokumentu, Mode=TwoWay}"/>
+                    <Label Grid.Row="2" Content="Nazwa kontrahenta" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=KontrahentNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Grid.Row="2" Grid.Column="2" Content="..." Margin="8" Command="{Binding ShowKontrahenciCommand}" Style="{StaticResource ButtonWybierz}"/>
+                    <Label Grid.Row="3" Content="NIP kontrahenta" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=KontrahentNIP, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="4" Content="Adres kontrahenta" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" IsEnabled="False" Text="{Binding Path=KontrahentAdres, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <Label Grid.Row="0" Grid.Column="4" Content="Licz od" Style="{StaticResource LabelStandardowy}"/>
+                    <DatePicker Grid.Row="0" Grid.Column="5" SelectedDate="{Binding Path=FakturaLiczonaOd, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="1" Grid.Column="4" Content="Data wystawienia" Style="{StaticResource LabelStandardowy}"/>
+                    <DatePicker Name="dp" Grid.Row="1" Grid.Column="5"  SelectedDate="{Binding Path=DataWystawienia, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="2" Grid.Column="4" Content="Data sprzedaży" Style="{StaticResource LabelStandardowy}"/>
+                    <DatePicker Grid.Row="2" Grid.Column="5" SelectedDate="{Binding Path=DataSprzedazy, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="3" Grid.Column="4" Content="Nazwa magazynu" Style="{StaticResource LabelStandardowy}"/>
+                    <ComboBox Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="3" Style="{StaticResource ControlStandardowy}"
+                         ItemsSource="{Binding MagazynyComboBoxItems}" 
+                         DisplayMemberPath="Value" 
+                         SelectedValuePath="Key" 
+                         SelectedValue="{Binding Path=IdMagazynu, Mode=TwoWay}"/>
+                    <Label Grid.Row="4" Grid.Column="4" Content="Sposob platnosci" Style="{StaticResource LabelStandardowy}"/>
+                    <ComboBox Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="3" Style="{StaticResource ControlStandardowy}"
+                         ItemsSource="{Binding SposobyPlatnosciComboBoxItems}" 
+                         DisplayMemberPath="Value" 
+                         SelectedValuePath="Key" 
+                         SelectedValue="{Binding Path=IdSposobuPlatnosci, Mode=TwoWay}"/>
+                    <Label Grid.Row="5" Grid.Column="4" Content="Rabat" Style="{StaticResource LabelStandardowy}"/>
+                    <TextBox Grid.Row="5" Grid.Column="5" Style="{StaticResource TextBoxStandardowy}" Text="{Binding Path=Rabat, UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}"/>
+                    <Label Grid.Row="5" Grid.Column="6" Content="%" Style="{StaticResource LabelStandardowy}"/>
+                </Grid>
+            </Expander>
+
+        </Grid>
+    </ScrollViewer>
+</local:JedenViewBase>

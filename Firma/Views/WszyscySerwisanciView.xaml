@@ -1,0 +1,21 @@
+﻿<local:WszystkieViewBase x:Class="Firma.Views.WszyscySerwisanciView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectedItem="{Binding Path=WybranySerwisant, Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=IdSerwisanta}"/>
+                <DataGridTextColumn Header="Imie" Binding="{Binding Path=Imie}"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Path=Nazwisko}"/>
+                <DataGridTextColumn Header="Nazwa firmy" Binding="{Binding Path=NazwaFirmy}"/>
+                <DataGridTextColumn Header="Kategoria serwisu" Binding="{Binding Path=KategoriaSerwisuNazwa}"/>
+                <DataGridTextColumn Header="Koszt" Binding="{Binding Path=Koszt}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:WszystkieViewBase>

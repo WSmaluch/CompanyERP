@@ -1,0 +1,213 @@
+﻿<Window x:Class="Firma.MainWindow"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Firma"
+        mc:Ignorable="d"
+        Title="Firma" Height="700" Width="1000"
+        WindowState="Normal"
+       Background="#D3D3D3"
+        Icon="/Views/Content/Icons/archive.png"
+        >
+    <Window.InputBindings>
+        <KeyBinding Key="T" Modifiers="Control" Command="{Binding NowyTowarCommand}"/>
+        <KeyBinding Key="F" Modifiers="Control" Command="{Binding NowaFakturaCommand}"/>
+        <KeyBinding Key="K" Modifiers="Control" Command="{Binding NowyKontrahentCommand}"/>
+        <KeyBinding Key="S" Modifiers="Control" Command="{Binding ZlecenieSerwisoweCommand}"/>
+        <KeyBinding Key="W" Modifiers="Control" Command="{Binding WynagrodzeniaCommand}"/>
+        <KeyBinding Key="P" Modifiers="Control" Command="{Binding KontaktCommand}"/>
+    </Window.InputBindings>
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowResources.xaml"/>
+    </Window.Resources>
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Ribbon x:Name="Ribbon" Grid.Row="0" Grid.Column="0" >
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu Visibility="Collapsed" >
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <Ribbon.HelpPaneContent>
+                <RibbonButton SmallImageSource="/Views/Content/Icons/info.png" Click="RibbonButton_Click" />
+            </Ribbon.HelpPaneContent>
+            <RibbonTab Header="Ogólne" KeyTip="I" >
+                <RibbonGroup Header="Ogólne" Margin="-1">
+                    <RibbonGroup Height="100" >
+                        <RibbonButton Label="Kontrahenci" LargeImageSource="/Views/Content/Icons/kontrahenci.png" Command="{Binding WszyscyKontrahenciCommand}"/>
+                        <RibbonButton Label="Nowy kontrahent" LargeImageSource="/Views/Content/Icons/kontrahent.png" Command="{Binding NowyKontrahentCommand}"/>
+                    </RibbonGroup>
+                    <RibbonGroup Height="100">
+                        <RibbonButton Label="Pracownicy" LargeImageSource="/Views/Content/Icons/pracownicy.png" Command="{Binding WszyscyPracownicyCommand}"/>
+                    </RibbonGroup>
+                    <RibbonButton Label="Towary" LargeImageSource="/Views/Content/Icons/towary.png" Command="{Binding WszystkieTowaryCommand}"/>
+                    <RibbonButton Label="Nowy towar" LargeImageSource="/Views/Content/Icons/towar.png" Command="{Binding NowyTowarCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Raporty">
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/raports.png" Label="Raport sprzedaży" Command="{Binding RaportSprzedazyCommand}"/>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/najpopularniejszy.png" Label="Najpopularniejszy produkt" Command="{Binding NajpopularniejszyProduktCommand}"/>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/kraje.png" Label="Najpoplarniejszy produkt w danym kraju" Command="{Binding NajpopularniejszyProduktWKrajuCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Księgowość" Margin="-1">
+                    <RibbonGroup Height="100">
+                        <RibbonButton LargeImageSource="/Views/Content/Icons/dokumenty.png" Label="Dokumenty " Command="{Binding WszystkieDokumentyCommand}"/>
+                        <RibbonButton LargeImageSource="/Views/Content/Icons/pozycjefak.png" Label="Pozycja faktury"  Command="{Binding WszystkiePozycjeFakturyCommand}" />
+                    </RibbonGroup>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/WZzz.png" Label="Wydania zewnętrzne(WZ)" Command="{Binding WszystkieWydaniaZewnetrzneCommand}"/>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/PZ.png" Label="Przyjecia zewnętrzne(PZ)" Command="{Binding WszystkiePrzyjeciaZewnetrzneCommand}"/>
+                </RibbonGroup>
+
+            </RibbonTab>
+            <RibbonTab Header="Handel" KeyTip="L">
+                <RibbonGroup Height="100">
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/dokumenty.png" Label="Dokumenty" Command="{Binding WszystkieDokumentyCommand}"/>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/dokument.png" Label="Nowy dokument" Command="{Binding NowaFakturaCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/WZzz.png" Label="Wydania zewnętrzne(WZ)" Command="{Binding WszystkieWydaniaZewnetrzneCommand}"/>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/PZ.png" Label="Przyjecia zewnętrzne(PZ)" Command="{Binding WszystkiePrzyjeciaZewnetrzneCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/przyjecieTowaru.png" Label="Pozycje przyjecia zewnętrznego towaru" Command="{Binding WszystkiePozycjePrzyjeciaZewnetrznegoTowaruCommand}"/>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/wydanieTowaru.png" Label="Pozycje wydania zewnętrznego towaru" Command="{Binding WszystkiePozycjeWydaniaZewnetrznegoTowaruCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/pozycjefak.png" Label="Pozycje faktury" Command="{Binding WszystkiePozycjeFakturyCommand}"/>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/pozycjafak.png" Label="Nowa pozycja faktury" Command="{Binding NowaPozycjaFakturyCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup >
+                    <RibbonMenuButton SmallImageSource="/Views/Content/Icons/typkontrahenta.png" Label="Typ towaru">
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/kontrahenci.png" Header="Wszystkie" Command="{Binding WszystkieTypyTowarowCommand}"/>
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/plus.png" Header="Dodaj nowy" Command="{Binding NowyTypTowaruCommand}"/>
+                    </RibbonMenuButton>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Księgowość" KeyTip="I">
+                <RibbonGroup Height="100">
+                    <RibbonButton Label="Kontrahenci" LargeImageSource="/Views/Content/Icons/kontrahenci.png" Command="{Binding WszyscyKontrahenciCommand}"/>
+                    <RibbonButton Label="Nowy kontrahent" LargeImageSource="/Views/Content/Icons/kontrahent.png" Command="{Binding NowyKontrahentCommand}"/>
+                    <RibbonButton Label="Kontakty" LargeImageSource="/Views/Content/Icons/contact_phone.png" Command="{Binding KontrahenciKontaktCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup Height="100">
+                    <RibbonButton Label="Dokumenty" LargeImageSource="/Views/Content/Icons/dokumenty.png" Command="{Binding WszystkieDokumentyCommand}"/>
+                    <RibbonButton Label="Nowy dokument" LargeImageSource="/Views/Content/Icons/dokument.png" Command="{Binding NowaFakturaCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/Adresy.png" Label="Wszystkie adresy" Command="{Binding WszystkieAdresyCommand}"/>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/Adres.png" Label="Dodaj nowy adres" Command="{Binding NowyAdresCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/kontakty.png" Label="Wszystkie kontakty" Command="{Binding WszystkieKontaktyCommand}"/>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/kontakt.png" Label="Dodaj nowy kontakt" Command="{Binding NowyKontaktCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Inne">
+                    <RibbonMenuButton SmallImageSource="/Views/Content/Icons/katdok.png" Label="Kategoria dokumentu">
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/katdok.png" Header="Wszystkie" Command="{Binding WszystkieKategorieDokumentuCommand}"/>
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/katdokdodaj.png" Header="Dodaj" Command="{Binding NowaKategoriaDokumentuCommand}"/>
+                    </RibbonMenuButton>
+                    <RibbonMenuButton SmallImageSource="/Views/Content/Icons/kontrahentkategoria.png" Label="Kategoria kontrahenta">
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/kontrahentkategoria.png" Header="Wszystkie" Command="{Binding WszystkieKategorieKontrahentaCommand}"/>
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/kontrahentkategorie.png" Header="Dodaj" Command="{Binding NowaKategoriaKontrahentaCommand}"/>
+                    </RibbonMenuButton>
+                    <RibbonMenuButton SmallImageSource="/Views/Content/Icons/vatt.png" Label="VAT">
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/vatt.png" Header="Wszystkie" Command="{Binding WszystkieRodzajeVATCommand}"/>
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/vat.png" Header="Dodaj nowy" Command="{Binding NowyRodzajVATCommand}"/>
+                    </RibbonMenuButton>
+                    <RibbonMenuButton SmallImageSource="/Views/Content/Icons/dwa.png" Label="Rodzaj kontrehenta">
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/pracownicy.png" Header="Wszystkie" Command="{Binding WszystkieRodzajeKontrahentaCommand}"/>
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/person_FILL0_wght400_GRAD0_opsz48.png" Header="Dodaj nowy" Command="{Binding NowyRodzajKontrahentaCommand}"/>
+                    </RibbonMenuButton>
+                    <RibbonMenuButton SmallImageSource="/Views/Content/Icons/file-document-outline.png" Label="Typ dokumentu">
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/folder.png" Header="Wszystkie" Command="{Binding WszystkieTypyDokumentowCommand}"/>
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/plus.png" Header="Dodaj nowy" Command="{Binding NowyTypDokumentuCommand}"/>
+                    </RibbonMenuButton>
+                    <RibbonMenuButton SmallImageSource="/Views/Content/Icons/typkontrahenta.png" Label="Typ kontrahenta">
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/kontrahenci.png" Header="Wszystkie" Command="{Binding WszystkieTypyKontrahentaCommand}"/>
+                        <RibbonMenuItem ImageSource="/Views/Content/Icons/plus.png" Header="Dodaj nowy" Command="{Binding NowyTypKontrahentaCommand}"/>
+                    </RibbonMenuButton>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Kadry i magazyny" KeyTip="I">
+                <RibbonGroup Height="100">
+                    <RibbonButton Label="Pracownicy" LargeImageSource="/Views/Content/Icons/pracownicy.png" Command="{Binding WszyscyPracownicyCommand}"/>
+                    <RibbonButton Label="Nowy pracownik" LargeImageSource="/Views/Content/Icons/dwa.png" Command="{Binding NowyPracownikCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/Adresy.png" Label="Wszystkie adresy" Command="{Binding WszystkieAdresyCommand}"/>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/Adres.png" Label="Dodaj nowy adres" Command="{Binding NowyAdresCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Magazyn">
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/magazyny.png" Label="Wszystkie magazyny" Command="{Binding WszystkieMagazynyCommand}"/>
+                    <RibbonButton LargeImageSource="/Views/Content/Icons/magazyn.png" Label="Dodaj nowy magazyn" Command="{Binding NowyMagazynCommand}"/>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Serwis" KeyTip="I">
+                <RibbonGroup Height="100">
+                    <RibbonButton Label="Zlecenia serwisowe" LargeImageSource="/Views/Content/Icons/serwisy.png" Command="{Binding WszystkieZleceniaSerwisoweCommand}"/>
+                    <RibbonButton Label="Nowe zlecenie serwisowe" LargeImageSource="/Views/Content/Icons/serwis.png" Command="{Binding ZlecenieSerwisoweCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup Height="100">
+                    <RibbonButton Label="Wszystkie urządzenia" LargeImageSource="/Views/Content/Icons/urzadzenia.png" Command="{Binding WszystkieUrzadzeniaCommand}"/>
+                    <RibbonButton Label="Nowe urządzenie" LargeImageSource="/Views/Content/Icons/urzadzenie.png" Command="{Binding NoweUrzadzenieCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup Height="100">
+                    <RibbonButton Label="Wszyscy serwisanci" LargeImageSource="/Views/Content/Icons/pracownicy.png" Command="{Binding WszyscySerwisanciCommand}"/>
+                    <RibbonButton Label="Nowy serwisant" LargeImageSource="/Views/Content/Icons/engineering_FILL0_wght400_GRAD0_opsz48.png" Command="{Binding NowySerwisantCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/Adresy.png" Label="Wszystkie kategorie serwisu" Command="{Binding WszystkieKategorieSerwisuCommand}"/>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/Adres.png" Label="Dodaj nową kategorie serwisu" Command="{Binding NowaKategoriaSerwisuCommand}"/>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="System" KeyTip="I">
+                <RibbonGroup>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/miary.png" Label="Wszystkie jednostki miary" Command="{Binding WszystkieJednostkiMiaryCommand}"/>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/add.png" Label="Dodaj nową jednostkię miary" Command="{Binding NowaJednostkaMiaryCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/payments.png" Label="Wszystkie sposoby płatności" Command="{Binding WszystkieSposobyPlatnosciCommand}"/>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/add.png" Label="Dodaj nową sposob płatności" Command="{Binding NowySposobPlatnosciCommand}"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/kraje.png" Label="Wszystkie kraje" Command="{Binding WszystkieKrajeCommand}"/>
+                    <RibbonButton SmallImageSource="/Views/Content/Icons/add.png" Label="Dodaj nowy kraj" Command="{Binding NowyKrajCommand}"/>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1">
+                <HeaderedContentControl
+                    Header="Przestrzeń robocza"
+                    Background="RED"
+                    Content="{Binding Path=Workspaces}"
+                    ContentTemplate="{StaticResource WorkspacesTemplate}"
+                    Style="{StaticResource MainHCCStyle}" Margin="0,-24,0,0"
+                    />
+            </Border>
+        </Grid>
+        <StatusBar Grid.Row="3" Background="#202020" >
+            <StatusBarItem>
+                <TextBlock Style="{StaticResource TextBlockStyle}"> 
+                    Wojciech Smaluch</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal" Margin="350,0,0,0">
+                    <TextBlock Style="{StaticResource TextBlockStyle}"><Run Text="WSB-NLU" /></TextBlock>
+                    <Image Source="/Views/Content/Icons/tree.png" Width="20" Height="20" />
+                </StackPanel>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <Label Content="{x:Static sys:DateTime.Today}" ContentStringFormat="d/M/yyyy" Style="{StaticResource LabelStyle}"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
